@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>forms</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+         <header class="head">
+
+    <!--↡↡  logo ↡↡ -->
+    <a 
+    class="brand" href="index.html" 
+    aria-label="Embassy Electricals home">
+      <span 
+      class="lbl" 
+      aria-hidden="true">E<span>⚡</span>
+    </span>
+      <span 
+      class="brand-name">Embassy 
+      <strong>Electricals >>></strong>
+    </span>
+    </a>
+
+    <!--↡↡  emergency  ↡↡ -->
+<div id="staff">
+    <a class="staff" href="staff.html">staff sign in</a>
+  </div>
+    <div class="emergency">
+      <span class="hotline-tag">🚨Need urgent help?🚨</span>
+      <a class="hotline" href="tel:+254 707463607">+254 707463607</a>
+    </div>
+
+  </header>
+
+    <section 
+    class="request-section section-wrap" 
+    id="request">
+      <div class="section-heading">
+        <p class="eyebrow">Hello❓</p>
+        <h2>How can we help?</h2>
+        <p>
+          Choose the request that best describes what you need.
+        </p>
+      </div>
+
+      <!--↡↡  clients favorite buttons ↡↡ -->
+
+      <div 
+      class="request-tabs" 
+      role="group" 
+      aria-label="Request type">
+
+      <!--↡↡  button-3 ↡↡ -->
+        <div
+        class="choice-card active" 
+        type="button" 
+        data-type="urgent" 
+        aria-pressed="true">
+          <span 
+          class="choice-icon" 
+          aria-hidden="true">!</span>
+
+        <!--↡↡  button-3 content ↡↡ -->
+          <span>
+            <strong>Report a problem</strong>
+            <small>For faults, power loss or safety risks.</small>
+          </span>
+          <span 
+          class="choice-arrow" 
+          aria-hidden="true">🏹</span>
+        </div>
+
+        <!--↡↡  button-4 ↡↡ -->
+        <div
+        class="choice-card"
+         type="button" 
+         data-type="planned"
+          aria-pressed="false">
+          <span 
+          class="choice-icon planned-icon" 
+          aria-hidden="true">×</span>
+
+          <!--↡↡  button-4 content ↡↡ -->
+          <span>
+            <strong>New customer</strong>
+            <small>For planned electrical work or a new site.</small>
+          </span>
+          <span 
+          class="choice-arrow" aria-hidden="true">🏹</span>
+        </div>
+      </div>
+
+      <!--↟↟ end of clients button ↟↟-->
+
+      <!--↡↡  form for urgency ↡↡ -->
+
+      <form
+      id="request-form">
+        <input 
+        type="hidden" 
+        id="request-type" 
+        name="requestType" 
+        value="urgent">
+
+        <div
+         class="form-heading">
+          <div>
+            <p class="support" id="form-support">
+              URGENT REQUEST
+            </p>
+            <h3 id="form-title">
+              Report an electrical problem
+            </h3>
+          </div>
+
+          <span
+          class="required-note">* Required fields
+        </span>
+        </div>
+
+        <div 
+        class="form-grid">
+        <!--↡↡  lables ↡↡ -->
+          <label>
+            Full name *
+            <input
+             name="fullName" 
+             autocomplete="name"
+              required maxlength="100" 
+              placeholder="Your name/companies">
+            </label>
+
+            <!-- . -->
+
+          <label>
+            Phone number *
+            <input 
+            name="phone" 
+            type="tel" 
+            autocomplete="tel" 
+            required maxlength="18"
+             placeholder="+254 7XX XXX XXX">
+            </label>
+
+              <!-- . -->
+
+          <label>
+            Email address *
+            <input 
+            name="email"
+             type="email" 
+             autocomplete="email" 
+             required maxlength="120" 
+             placeholder="xyz@gmail.com">
+            </label>
+            
+
+              <!-- . -->
+
+          <label>
+            Building / site location *
+            <input 
+            name="location" 
+            required maxlength="180" 
+            placeholder="Region-Country-Estate-building-area">
+          </label>
+
+           <!--↡↡  description ↡↡ -->
+
+          <label 
+          class="full-width">
+          What happened?*
+          <textarea 
+          name="description" 
+          rows="6" 
+          required maxlength="1500"
+           placeholder="Describe the issue or the work you need...">
+          </textarea>
+        </label>
+
+           <!--↡↡  ratings ↡↡ -->
+
+          <fieldset 
+          class="full-width"
+           id="damage-field">
+            <legend>
+              Damage level *
+            </legend>
+            <div 
+            class="radio-options">
+              <label>
+                <input 
+                type="radio" 
+                name="damageLevel" 
+                value="Partial power loss" 
+                required>
+                 Partial power loss
+                </label>
+
+                <!-- , -->
+
+              <label>
+                <input 
+                type="radio"
+                 name="damageLevel" 
+                 value="Total power loss"> 
+                 Total power loss
+                </label>
+
+                <!-- , -->
+
+              <label>
+                <input
+                 type="radio"
+                  name="damageLevel" 
+                  value="Safety risk"> 
+                  Safety risk
+                </label>
+
+                <!-- , -->
+
+               <label>
+                <input 
+                type="radio" 
+                name="damageLevel" 
+                value="Undetermined">
+                 Undetermined
+                </label>
+            </div>
+          </fieldset>
+
+        <!--↡↡  select environment ↡↡ -->
+
+          <label 
+          class="full-width hidden" 
+          id="building-type-field">
+          Environment*
+            <select 
+            name="buildingType">
+              <option value="">Select  Environment</option>
+              <option>Home</option>
+              <option>Apartment block</option>
+              <option>Commercial</option>
+              <option>Industrial</option>
+              <option>Hospital</option>
+              <option>Others</option>
+            </select>
+          </label>
+           <label 
+          class="full-width hidden" 
+          id="building-type-field">
+          Environment*
+            <select 
+            name="buildingType">
+              <option value="">Select  Environment</option>
+              <option>Home</option>
+              <option>Apartment block</option>
+              <option>Commercial</option>
+              <option>Industrial</option>
+              <option>Hospital</option>
+              <option>Others</option>
+            </select>
+          </label>
+
+           <!--↡↡  dates ↡↡ -->
+
+          <label 
+          class="hidden"
+          id="start-date-field">
+          Preferred start date
+          <input 
+          name="preferredDate" 
+          type="date">
+        </label>
+
+        <!--↡↡  media ↡↡ -->
+
+          <label 
+          class="full-width">
+          Site photo.
+          <input 
+          name="photo"
+           type="file" 
+           accept="image/*" 
+           id="photo-input" 
+           required>
+           <small 
+           class="field-hint">
+           The uploaded photo helps to give the service provider
+             a hint of the Environment for better preparedness.
+            </small>
+           <small
+            class="field-hint">
+            Also its used for easy identification & Tracing.
+          </small>
+          </label>
+        </div>
+
+      
+
+      <!--↡↡  button-5 for submit ↡↡ -->
+
+        <button 
+        class="button button-primary submit-button" 
+        type="submit">
+        Send request. 
+        <span>📨</span>
+      </button> 
+
+        <button 
+        class="button button-primary view-button" 
+        type="view">
+        Track request. 
+        <span>📩</span>
+      </button>
+    
+ 
+<footer
+   class="site-footer">
+    <div 
+    class="section-wrap footer-content">
+      <div>
+        <strong>Embassy Electricals</strong>
+        <p>Electrical engineering, handled professionally.</p>
+      </div>
+      <div 
+      class="footer-right">
+      <span>#TheEngineeringCompany</span>
+      <a href="mailto: wachiramorris7@gmail.com">
+        wachiramorris7@gmail.com
+      </a>
+    </div>
+    </div>
+
+    <div 
+    class="section-wrap copyright">© <span 
+    id="year">
+  </span> 
+  Embassy Electricals. All rights reserved.
+</div>
+  </footer>
+    <script src="script.js"></script>
+</body>
+</html>
+
